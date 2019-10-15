@@ -13,7 +13,23 @@
 		2C94335E2356215B0009EF74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C94335C2356215B0009EF74 /* Main.storyboard */; };
 		2C9433602356215B0009EF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C94335F2356215B0009EF74 /* Assets.xcassets */; };
 		2C9433632356215B0009EF74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9433612356215B0009EF74 /* LaunchScreen.storyboard */; };
+		2C94336F235624660009EF74 /* MyModule.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C94336E235624660009EF74 /* MyModule.dylib */; };
+		2C943370235624660009EF74 /* MyModule.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 2C94336E235624660009EF74 /* MyModule.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C943371235624660009EF74 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C943370235624660009EF74 /* MyModule.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C9433532356215B0009EF74 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		2C94335F2356215B0009EF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C9433622356215B0009EF74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C9433642356215B0009EF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C94336E235624660009EF74 /* MyModule.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = MyModule.dylib; path = MyModule/Libraries/MyModule.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C94336F235624660009EF74 /* MyModule.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 			children = (
 				2C9433552356215B0009EF74 /* MyApp */,
 				2C9433542356215B0009EF74 /* Products */,
+				2C94336D235624660009EF74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +86,14 @@
 			path = MyApp;
 			sourceTree = "<group>";
 		};
+		2C94336D235624660009EF74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C94336E235624660009EF74 /* MyModule.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +104,7 @@
 				2C94334F2356215B0009EF74 /* Sources */,
 				2C9433502356215B0009EF74 /* Frameworks */,
 				2C9433512356215B0009EF74 /* Resources */,
+				2C943371235624660009EF74 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -290,6 +318,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyModule/Libraries",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.tasuwo.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -306,6 +338,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyModule/Libraries",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.tasuwo.MyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
