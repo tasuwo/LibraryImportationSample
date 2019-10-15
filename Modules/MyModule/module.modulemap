@@ -1,0 +1,3 @@
+module MyModule {
+    header "../../MyModule/Sources/helloworld.h"
+}
